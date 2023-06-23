@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from "next/head";
 
-const Button = () => {
+const Button = (props) => {
     return (
         <div>
             <Head>
@@ -11,7 +11,11 @@ const Button = () => {
             </Head>
 
             <div className="flex justify-center itenms-center mt-48">
-                <button>Style</button>
+                <button 
+                    className={`bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-4 focus:ring-light-blue-100 ${props.disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : 'hover:bg-blue-700'} ${props.className}`}
+                    disabled={props.disabled}>
+                    Button CTA
+                </button>
             </div>
         </div>
     );
